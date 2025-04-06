@@ -86,19 +86,22 @@
         <div class="skill-container">
             <h2 style="text-align: center; margin-bottom: 2rem;">Technical Skills</h2>
             <div class="skill-bar">
-                <div class="skill-progress skill-html" data-percent="90%">Html</div>
+                <div class="skill-progress skill-html" data-percent="100%" style="color: #fff;">Bootstrap</div>
             </div>
             <div class="skill-bar">
-                <div class="skill-progress skill-css" data-percent="85%"></div>
+                <div class="skill-progress skill-node" data-percent="85%" style="color: #fff;">Node.js</div>
             </div>
             <div class="skill-bar">
-                <div class="skill-progress skill-js" data-percent="90%"></div>
+                <div class="skill-progress skill-js" data-percent="70%" style="color: #fff;">Java-Script</div>
             </div>
             <div class="skill-bar">
-                <div class="skill-progress skill-python" data-percent="85%"></div>
+                <div class="skill-progress skill-react" data-percent="40%" style="color: #fff;">React</div>
             </div>
             <div class="skill-bar">
-                <div class="skill-progress skill-java" data-percent="50%"></div>
+                <div class="skill-progress skill-python" data-percent="85%" style="color: #fff;">Python</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress skill-java" data-percent="50%" style="color: #fff;">Java</div>
             </div>
         </div>
     </section>
@@ -342,7 +345,7 @@
             }, { threshold: 0.5 });
     
             skillBars.forEach(skillBar => {
-                skillBar.textContent = skillBar.dataset.percent; // Add percentage text
+                //skillBar.textContent = skillBar.dataset.percent; // Add percentage text
                 skillObserver.observe(skillBar);
             });
         });

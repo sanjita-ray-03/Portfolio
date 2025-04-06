@@ -383,7 +383,7 @@ h1 {
         }
 
         .skill-progress {
-            width: 0; /* Initial state */
+            width: 0%; /* Initial state */
             transition: width 2s ease-in-out, background-color 0.3s ease;
             position: relative;
             overflow: visible;
@@ -409,11 +409,42 @@ h1 {
         }
 
         /* Skill colors */
-        .skill-html { width: 90%; background-color: #e44d26; }
-        .skill-css { width: 85%; background-color: #264de4; }
-        .skill-js { width: 80%; background-color: #f0db4f; }
-        .skill-python { width: 95%; background-color: #306998; }
-        .skill-java { width: 75%; background-color: #ec2025; }
+        .skill-html { 
+            width: 100%; 
+            background-color: #e44d26; 
+            border-radius: 20px;
+            padding-left: 15px;
+        }
+        .skill-node { 
+            width: 85%; 
+            background-color: #264de4; 
+            border-radius: 20px;
+            padding-left: 15px;
+        }
+        .skill-js { 
+            width: 70%; 
+            background-color: #f0db4f; 
+            border-radius: 20px;
+            padding-left: 15px;
+        }
+        .skill-react { 
+            width: 40%; 
+            background-color: #4f62f0; 
+            border-radius: 20px;
+            padding-left: 15px;
+        }
+        .skill-python { 
+            width: 85%; 
+            background-color: #306998; 
+            border-radius: 20px;
+            padding-left: 15px;
+        }
+        .skill-java {
+             width: 50%; 
+            background-color: #ec2025; 
+            border-radius: 20px;
+            padding-left: 15px;
+        }
 
         /* Contact Form */
         .contact {
