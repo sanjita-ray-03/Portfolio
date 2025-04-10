@@ -844,4 +844,86 @@ h1 {
         transform: translateY(0);
     }
 
+/* certifications */
+    .certifications {
+        padding: 5rem 0;
+        background: #f8f9fa;
+    }
     
+    .cert-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        height: 100%;
+    }
+    
+    .cert-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .image-section {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+    }
+    
+    .cert-image {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .cert-card:hover .cert-image {
+        transform: scale(1.05);
+    }
+    
+    .cert-content {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .cert-content h3 {
+        color: #2b2d42;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .year {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    
+    /* Animations */
+    .scroll-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+    
+    .animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .animate-image {
+        opacity: 0;
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    
+    .animate-image.loaded {
+        opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .image-section {
+            height: 200px;
+        }
+        
+        .cert-content h3 {
+            font-size: 1.1rem;
+        }
+    }

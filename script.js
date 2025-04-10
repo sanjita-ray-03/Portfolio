@@ -29,6 +29,113 @@ let form = document.querySelector(".third .main-body form");
                     // Change the value of the submit button back to "Submit" after the form has been submitted.
                 });
         });
-        
 
+
+// Add this JavaScript for scroll animations
+// Scroll animation trigger
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                const images = entry.target.querySelectorAll('.animate-image');
+                images.forEach(img => img.classList.add('loaded'));
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-animate').forEach((el) => {
+        observer.observe(el);
+    });
+});
+
+    // Skill Bar Animation
+    const skillBars = document.querySelectorAll('.skill-progress');
+    skillBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 500);
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+
+
+
+// Skill section      
+// Add this JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBar = entry.target;
+                const targetWidth = skillBar.dataset.percent;
+                skillBar.style.setProperty('--target-width', targetWidth);
+                skillBar.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(skillBar => {
+        //skillBar.textContent = skillBar.dataset.percent; // Add percentage text
+        skillObserver.observe(skillBar);
+    });
+});
+
+
+
+// Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+  
+      hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navLinks.classList.toggle("active");
+      });
+  
+      // Close menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+      }));
+  
+      // Close menu when clicking outside
+      document.addEventListener("click", (event) => {
+          if (!event.target.closest(".nav-container")) {
+              hamburger.classList.remove("active");
+              navLinks.classList.remove("active");
+          }
+      });
      
+//Download CV
+function downloadCV() {
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    
+    // Path to your CV file (update this with your actual file path)
+    link.href = 'CV/Sanjita-Ray-Resume.pdf';
+    
+    // Name you want the downloaded file to have
+    link.download = 'Sanjita-Ray-Resume.pdf';
+    
+    // Append to body (required for Firefox)
+    document.body.appendChild(link);
+    
+    // Trigger the click event
+    link.click();
+    
+    // Remove the element from the DOM
+    document.body.removeChild(link);
+}

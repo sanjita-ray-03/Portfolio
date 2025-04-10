@@ -45,9 +45,9 @@
                 </p>
                 
                 <div class="cta-buttons">
-                    <a href="#" class="cv-button">
+                    <button id="downloadBtn" onclick="downloadCV()" style="border: none; background-color: #fff;"><a href="#" class="cv-button">
                         Download CV <i class="fa fa-download"></i>
-                    </a>
+                    </a></button>
                     <a href="#contact" class="cv-button secondary">
                         Hire Me <i class="fa fa-paper-plane"></i>
                     </a>
@@ -220,25 +220,40 @@
 
 <!-- Certifications Section -->
 <section class="certifications" id="certifications">
-    <div class="skill-container">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Certifications</h2>
-        <div class="cert-card scroll-animate">
-            <div class="cert-card scroll-animate">
-                <i class="fa fa-meta"></i>
-                <h3>Meta Certified Python Developer</h3>
-                <p>2023</p>
+    <div class="container">
+        <h2 class="text-center mb-5">Certifications</h2>
+        <div class="row g-4 justify-content-center">
+            <!-- Meta Certification Card -->
+            <div class="col-lg-5 col-md-6">
+                <div class="cert-card scroll-animate">
+                    <div class="image-section">
+                        <a href="https://www.linkedin.com/posts/sanjita-ray-4aab972a3_google-coursera-onlinecourse-activity-7190702639607681024-evPf?utm_source=share&utm_medium=member_desktop&rcm=ACoAAElS_wIBGMmhCFYmG_LGfT4_SF7D1GP7pDY" target="_blank"><img src="img/Meta.png" alt="Meta Certification" class="img-fluid cert-image animate-image"></a>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Meta Certified Python Developer</h3>
+                        <p class="year">2024</p>
+                    </div>
+                </div>
             </div>
-            <div class="cert-card scroll-animate">
-                <i class="fa fa-robot"></i>
-                <h3>Google Cloud Gen-AI Certified</h3>
-                <p>2021</p>
+
+            <!-- Delta Certification Card -->
+            <div class="col-lg-5 col-md-6">
+                <div class="cert-card scroll-animate">
+                    <div class="image-section">
+                        <a href="https://www.linkedin.com/posts/sanjita-ray-4aab972a3_apnacollege-delta5-mernstackdeveloper-activity-7316138916447768576-rabB/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAElS_wIBGMmhCFYmG_LGfT4_SF7D1GP7pDY" target="_blank"><img src="img/Delta.png" alt="Google Certification" class="img-fluid cert-image animate-image"></a>
+                    </div>
+                    <div class="cert-content">
+                        <h3>MERN-Stack Certified Full-Stack Developer</h3>
+                        <p class="year">2025</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- Contact Section -->
-    <section class="contact scroll-animate third" id="contact">
+<!-- Contact Section -->
+<section class="contact scroll-animate third" id="contact">
     <div class="contact-container main-body" style="display: flex; justify-content: space-between; flex-wrap: wrap; padding: 4rem 2rem;">
         <div class="contact-form" style="flex: 1; min-width: 300px; margin-right: 2rem;">
             <h2 style="text-align: center; margin-bottom: 2rem;">Contact Me</h2>
@@ -284,7 +299,7 @@
         </div>
     </div>
 </section>
-    <!-- Footer -->
+<!-- Footer -->
     <footer>
         <p>&copy; 2025 Sanjita Ray. All rights reserved.</p>
         <div class="social-links">
@@ -293,93 +308,6 @@
             <a href="https://www.facebook.com/profile.php?id=100080594536588" target="_blank">Facebook</a>
         </div>
     </footer>
-
-    <script>
-        // Add this JavaScript for scroll animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Scroll Animation Trigger
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-    
-            document.querySelectorAll('.scroll-animate').forEach((element) => {
-                observer.observe(element);
-            });
-    
-            // Skill Bar Animation
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 500);
-            });
-    
-            // Smooth Scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
-
-    <script>
-        // Add this JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            const skillObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const skillBar = entry.target;
-                        const targetWidth = skillBar.dataset.percent;
-                        skillBar.style.setProperty('--target-width', targetWidth);
-                        skillBar.classList.add('animate');
-                    }
-                });
-            }, { threshold: 0.5 });
-    
-            skillBars.forEach(skillBar => {
-                //skillBar.textContent = skillBar.dataset.percent; // Add percentage text
-                skillObserver.observe(skillBar);
-            });
-        });
-    </script>
-
-    <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-    
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
-        });
-    
-        // Close menu when clicking a link
-        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navLinks.classList.remove("active");
-        }));
-    
-        // Close menu when clicking outside
-        document.addEventListener("click", (event) => {
-            if (!event.target.closest(".nav-container")) {
-                hamburger.classList.remove("active");
-                navLinks.classList.remove("active");
-            }
-        });
-    </script>
-
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
