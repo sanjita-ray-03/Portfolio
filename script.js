@@ -31,6 +31,8 @@ let form = document.querySelector(".third .main-body form");
         });
 
 
+
+
 // Add this JavaScript for scroll animations
 // Scroll animation trigger
 document.addEventListener('DOMContentLoaded', function() {
@@ -97,20 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Mobile Menu Toggle
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
-  
-      hamburger.addEventListener("click", () => {
-          hamburger.classList.toggle("active");
-          navLinks.classList.toggle("active");
-      });
-  
-      // Close menu when clicking a link
-      document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          navLinks.classList.remove("active");
-      }));
-  
+// Add this JavaScript for mobile menu functionality
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
       // Close menu when clicking outside
       document.addEventListener("click", (event) => {
           if (!event.target.closest(".nav-container")) {
@@ -118,6 +110,14 @@ document.addEventListener('DOMContentLoaded', function() {
               navLinks.classList.remove("active");
           }
       });
+
+
+
+hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('mobile-nav');
+    document.querySelector('.nav-links').classList.toggle('active');
+});
      
 //Download CV
 function downloadCV() {
