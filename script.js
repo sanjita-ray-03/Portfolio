@@ -125,10 +125,10 @@ function downloadCV() {
     const link = document.createElement('a');
     
     // Path to your CV file (update this with your actual file path)
-    link.href = 'CV/Sanjita-Ray-Resume.pdf';
+    link.href = 'CV/SanjitaRay-Resume.pdf';
     
     // Name you want the downloaded file to have
-    link.download = 'Sanjita-Ray-Resume.pdf';
+    link.download = 'SanjitaRay-Resume.pdf';
     
     // Append to body (required for Firefox)
     document.body.appendChild(link);
