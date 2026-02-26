@@ -360,9 +360,10 @@ h1 {
 
     
 .linkedin { background: #0077b5; }
-.github { background: #333; }
-.instagram { background: #cb1df2; }
-.facebook { background: #ea4c89; }
+.github { background: #333333; }
+.instagram { background: linear-gradient(45deg, #7638FA, #D300C5, #FF0069, #FF7A00, #FFD600); }
+.facebook { background: #1877F2; }
+.twitter { background: #000000; color: #ffffff; }
     /* CTA Buttons */
     .cta-buttons {
         display: flex;
@@ -500,37 +501,37 @@ h1 {
         /* Skill colors */
         .skill-html { 
             width: 100%; 
-            background-color: #e44d26; 
+            background-color: #2D3250; 
             border-radius: 20px;
             padding-left: 15px;
         }
         .skill-node { 
-            width: 85%; 
-            background-color: #264de4; 
+            width: 50%; 
+            background-color: #7077A1; 
             border-radius: 20px;
             padding-left: 15px;
         }
         .skill-js { 
-            width: 70%; 
-            background-color: #f0db4f; 
+            width: 50%; 
+            background-color: #424769; 
             border-radius: 20px;
             padding-left: 15px;
         }
         .skill-react { 
-            width: 40%; 
-            background-color: #4f62f0; 
+            width: 30%; 
+            background-color: #2D3250; 
             border-radius: 20px;
             padding-left: 15px;
         }
         .skill-python { 
-            width: 85%; 
-            background-color: #306998; 
+            width: 80%; 
+            background-color: #7077A1; 
             border-radius: 20px;
             padding-left: 15px;
         }
-        .skill-java {
-             width: 50%; 
-            background-color: #ec2025; 
+        .skill-mongodb {
+             width: 40%; 
+            background-color: #424769; 
             border-radius: 20px;
             padding-left: 15px;
         }
