@@ -139,3 +139,5 @@ function downloadCV() {
     // Remove the element from the DOM
     document.body.removeChild(link);
 }
+
+
